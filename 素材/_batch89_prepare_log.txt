@@ -1,0 +1,26 @@
+COPY C++\C++ 常用新特性\代码\C++ 17 hw.cpp
+COPY C++\C++ 常用新特性\代码\C++11 hw.cpp
+COPY C++\C++ 常用新特性\代码\协程案例.cpp
+COPY C++\C++ 常用新特性\代码\C++11 案例代码\Test002\Test002\data.txt
+COPY C++\C++ 常用新特性\代码\C++11 案例代码\Test002\Test002\mycode.cpp
+COPY C++\C++ 常用新特性\代码\C++11 案例代码\Test002\Test002\mycode.h
+COPY C++\C++ 常用新特性\代码\C++11 案例代码\Test002\Test002\Test002.cpp
+COPY C++\C++ 常用新特性\代码\C++11 案例代码\Test002\Test002\testdir\test.txt
+COPY C++\C++ 常用新特性\代码\C++17 案例代码\Test002\Test002\data.txt
+COPY C++\C++ 常用新特性\代码\C++17 案例代码\Test002\Test002\mycode.cpp
+COPY C++\C++ 常用新特性\代码\C++17 案例代码\Test002\Test002\mycode.h
+COPY C++\C++ 常用新特性\代码\C++17 案例代码\Test002\Test002\Test002.cpp
+COPY C++\C++ 常用新特性\代码\C++17 案例代码\Test002\Test002\testdir\test.txt
+COPY C++\C++ 常用新特性\代码\C++17 案例代码\Test002\Test002\testdir\a\123\test0001.txt
+COPY C++\C++ 常用新特性\代码\C++20 案例代码\Test002\Test002\data.txt
+COPY C++\C++ 常用新特性\代码\C++20 案例代码\Test002\Test002\mycode.cpp
+COPY C++\C++ 常用新特性\代码\C++20 案例代码\Test002\Test002\mycode.h
+COPY C++\C++ 常用新特性\代码\C++20 案例代码\Test002\Test002\Test002.cpp
+COPY C++\C++ 常用新特性\代码\C++20 案例代码\Test002\Test002\testdir\test.txt
+COPY C++\C++ 常用新特性\代码\C++20 案例代码\Test002\Test002\testdir\a\123\test0001.txt
+COPY C++\C++ 常用新特性\课件\C++11 常用新特性.pdf
+COPY C++\C++ 常用新特性\课件\C++17 常用新特性.pdf
+COPY C++\C++ 常用新特性\课件\C++20 常用新特性.pdf
+EXTRACT C++11 常用新特性.pdf  [META] pages=77 pics=4 chars=17033
+EXTRACT C++17 常用新特性.pdf  [META] pages=52 pics=2 chars=13389
+EXTRACT C++20 常用新特性.pdf  [META] pages=28 pics=1 chars=5380

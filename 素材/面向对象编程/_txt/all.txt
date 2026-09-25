@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<string>", line 5, in <module>
+    print(io.open(p, encoding='utf-8').read())
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'gbk' codec can't encode character '\u2022' in position 5151: illegal multibyte sequence
+============================== 19.1 类与对象.txt

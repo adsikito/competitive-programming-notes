@@ -1,0 +1,200 @@
+===== ../课件/19.1 类与对象.pdf pages 59
+1 | 类与对象 
+2 | 复习 1.生成54张牌 2.洗牌 3.发牌 
+3 | 目录 1. 面向对象和面向过程的区别                 了解 2. 类与对象的基本概念     
+4 | 面向对象和面向过程的区别 面向过程就是分析出解决问题所需要的步骤，然后把这些步骤一步 一步实现的过程。 面向对
+5 | 面向对象和面向过程的区别 例如实现一个番茄炒鸡蛋！ 面向过程： 先买番茄和鸡蛋->洗番茄->搅拌鸡蛋->生火-
+6 | 面向对象和面向过程的区别 面向过程： 优点:性能比面向对象高，因为类调用时需要实例化，开销比较大，比较消耗 资
+7 | 类与对象的基本概念 什么是类 具有相同特性（数据元素）和行为（功能）的对象的抽象就是类。因此，对象的抽象是类，
+8 | 类与对象的基本概念 类 对象 
+9 | 类class 定义 在 C++ 中，定义类，使用 class 关键字。类名的首字母一般都大写。 语法 clas
+10 | 类class 定义一个学生类，拥有打印自己姓名的方法。 class Student { public: voi
+11 | 类对象 使用类创建对象的过程，又称为类的实例化。 语法 Classname classVar(param); 
+12 | 类对象 class Student { public: void printName(string name)
+13 | 构造函数与析构函数 构造函数 创建一个 类 时，会自动添加一个跟类名一样的 函数，该函数没有任何的  返回值，
+14 | 构造函数与析构函数 构造函数 创建一个 类 时，会自动添加一个跟类名一样的 函数，该函数没有任何的  返回值，
+15 | 构造函数与析构函数 class Student { public: Student(){ cout << "S
+16 | 构造函数参数 C++ 中的构造函数，默认是没有任何 函数参数 的，但我们也可以 重写该函数，为其设置任意多个和
+17 | 构造函数参数 class Student { public: Student(string name,int 
+18 | 拷贝构造函数 拷贝构造函数也叫复制构造函数，它只有一个参数，参数类型是本类的引用。 参数可以是 const 引
+19 | 拷贝构造函数 拷贝构造函数通常用于： 1. 通过使用另一个同类型的对象来初始化新创建的对象。 2. 复制对象把
+20 | 拷贝构造函数 class Complex { public:     double real, imag;  
+21 | 拷贝构造函数 class Complex{ public:     double real, imag;   
+22 | 构造函数与析构函数 析构函数 在类被销毁时，系统还提供了一个析构函数，用来做一些清理工作，比如释 放分配的内存
+23 | 析构函数 语法 ~Destructor() { } 析构函数的前面一定要加 ~，并且是系统自动调用的。 
+24 | 析构函数 class Student { public: Student(string name, int a
+25 | 动态创建对象new/delete 当创建一个C++对象时，会发生两件事： 1 为对象分配内存 2 调用构造函数
+26 | new操作符 C++中解决动态内存分配的方案是把创建一个对象所需要的操作都 结合在一个称为new的运算符里。当
+27 | C的动态内存分配 class Person{ public: Person(){ age = 20; pNam
+28 | C的动态内存分配 • 程序员必须确定对象的长度。 • malloc返回一个void*指针，c++不允许将voi
+29 | new 操作符 Person* person = new Person();   等价于:   Person*
+30 | delete操作符 delete表达式先调用析构函数，然后释放内存。 正如new表达式返回一个指向对象的指针一
+31 | delete操作符 Person* person1 = new Person;   delete person
+32 | 动态创建对象数组 当创建一个对象数组的时候，必须对数组中的每一个对象调用构造 函数，除了在栈上可以聚合初始化，
+33 | 动态创建对象数组 class Student{ public: Student(){//栈上可以聚合初始化，堆
+34 | new/delete用于普通数组 //创建字符数组 char* p1 = new char[50]; //创建
+35 | 成员变量与成员函数  C++ 类的内部定义的 变量 被称为成员变量。类的成员变量可以定 义 0 到多个。 语法
+36 | 成员变量与成员函数 class Student { public: Student() { } string 
+37 | 成员变量与成员函数 C++ 类的普通成员函数是定义在 类 内部的方法，C++ 的成员方法与普通 函数 一样，可
+38 | 成员变量与成员函数 class Student { public: void printName(string
+39 | 成员变量与成员函数 案例 #include <iostream> using namespace std; c
+40 | 静态成员变量与静态成员函数 在 C++ 中，类 的静态成员可以实现多个 对象 之间的数据共享，并且使用 静态数
+41 | 静态成员变量 定义 静态数据成员在定义或说明时前面加 关键字 static。 语法 class ClassNa
+42 | 静态成员初始化 定义 静态成员在定义后，必须要进行初始化。 语法 Type ClassName::paramt
+43 | 静态成员引用 定义 静态成员的引用可以使用类名或者对象名引用。 语法 ClassName::paramter 
+44 | 静态成员变量案例 class Student { public: static string course; 
+45 | 静态成员函数 C++ 类的静态成员方法的需要使用 static 来修饰，且 C++ 类的静态 成员方法与 静态
+46 | 静态成员函数 定义 class ClassName { public:     static Type fun
+47 | 静态成员方法调用 定义 C++ 的静态方法调用方法有两种，一种是通过 “类名::方法名” 的 方法来调用，另一
+48 | 静态成员方法调用  案例 class Student { public:     Student()     
+49 | const修饰类的成员函数 在 C++ 中，const 关键字除了可以修饰 变量 和 成员变量 之外，还 可以
+50 | const修饰类的成员函数 定义 常成员函数需要在声明和定义的时候在函数头部的结尾加上 const 关键字。 
+51 | const修饰类的成员函数 class Student { public: Student(string na
+52 | this指针 在 C++ 中，有一个 this 关键字，其是一个指针，同时也是一个  const 指针，它指向
+53 | C++ this指针的本质 this 实际上是 成员函数 的一个形参，在调用成员函数时将对象的地址作为 实参传
+54 | this指针 案例 class Student { public: Student(string name, 
+55 | 练习 创建一个矩形类，成员变量有长和宽，成员函数有判断是否是正方 形和输出矩形的面积；创建实例对象，调用函数判
+56 | 练习 代码 #include <iostream> using namespace std; class Re
+57 | 知识点总结 1. 面向对象和面向过程的区别                 了解 2. 类与对象的基本概念  
+58 | 作业 1. 定义一个动物类，实现一个静态变量count记录类被实例化的次 数，创建动物的吃、跑、睡等动作，在创
+59 | 下节课预告 访问限定符、运算符重载等 
+===== ../课件/19.2 修饰符 运算符重载等.pdf pages 29
+1 | 修饰符 运算符重载等 
+2 | 复习 1. 面向对象和面向过程的区别                 了解 2. 类与对象的基本概念     
+3 | 目录 1. 修饰符                                              
+4 | 访问限定符 在 C++ 中，所有的 成员变量 和 成员函数 都有访问权限，所谓的访 问权限，就是到底能不能访问
+5 | 访问限定符 public 可以被该类中的函数、子类的函数、其友元函数访问，也可以由该类的对象访问。 prote
+6 | 访问限定符 class Student{ public: int v1=100; private: int v
+7 | 友元类与友元函数 友元函数 在 C++ 中，类 的私有成员（private）和只能在本类中访问，类的保 护成员
+8 | 友元函数 定义 使用 friend 修饰的函数，称为友元函数。 语法 class ClassName { pu
+9 | 友元函数 案例 class Student {public: Student(string name, int
+10 | 友元函数 案例 class Student {public: Student(string name, int
+11 | 友元类与友元函数 友元类 在 C++ 中，可以将一个 类 声明为友元类，如果一个类是另一个类 的友元类，友元类
+12 | 友元类 定义 使用 friend 修饰的类，称为友元类。 语法 class ClassName { publi
+13 | 友元类 class Teacher; class Student{ private: string name 
+14 | 运算符重载 C++ 允许在同一作用域中的某个函数和运算符指定多个定义，分别 称为函数重载和运算符重载。 重载声
+15 | 函数重载 class PrintFunc {    public:       void print(int 
+16 | 运算符重载 class Student{ private: string name; int age; pub
+17 | 运算符重载 运算符重载的本质为函数重载，但有一定的规则需要遵循。 1.重载运算符时,运算符的运算顺序和优先级不
+18 | 运算符重载 
+19 | 运算符重载 运算符重载形式有两种，重载为类的成员函数和重载为类的友元函数。  运算符重载为类的成员函数的一般语
+20 | 运算符重载 由于运算符种类与数量较多，以以下4大类中的一些符号来讲解。 4大类： 1.赋值运算符的重载 2.算
+21 | 赋值运算符的重载 class Student{ private: string name; int age; 
+22 | 算术运算符的重载 class complex{ public: complex(){ }complex(dou
+23 | 关系运算符的重载 class Student{ private: string name; int age; 
+24 | 其他较为特殊的重载 const int SIZE = 5; class Safearr{ private: i
+25 | 练习 利用友元函数，重载动物类年龄大小的代码。 
+26 | 代码 class Animal{ private: string name; int age; public:
+27 | 知识点总结 1. 修饰符                                           
+28 | 作业 1. 创建一个分数类，重载分数加减乘除。 
+29 | 下节课预告 继承和多态 
+===== ../课件/19.3 继承.pdf pages 61
+1 | 继承 
+2 | 复习 1. 修饰符                                              
+3 | 目录 1. 继承的基本概念和派生类的定义               了解 2. 继承的语法规则       
+4 | 继承的基本概念和派生类的定义 当你创建了一个动物类，动物类有吃喝睡跑等动作；这个时候你的 老板又说需要创建一个
+5 | 继承的基本概念和派生类的定义 继承使用场景 如果创建的新类与现有的类相似，只是多出若干成员变量或成员函 数时，
+6 | 继承的基本概念和派生类的定义 C++ 中的继承是类与类之间的关系，是一个很简单很直观的概念，与现实 世界中的继
+7 | 继承的语法规则 语法 class derived-class: access-specifier base-c
+8 | 继承案例 创建了一个新类 Dog，其继承自 Animal。 
+9 | 继承案例 代码 class Animal { public: string name; int age; pu
+10 | 三种继承方式 C++ 中的 继承 有三种方式，即 public、protected 和 private，此项 
+11 | 三种继承方式 不同的继承方式会影响基类成员在派生类中的访问权限。 public继承方式 1. 基类中所有 pu
+12 | 三种继承方式 先创建一个Person类，把name，age，height声明为不同的权限。 
+13 | 三种继承方式 先创建一个Person类，把name，age，height声明为不同的权限。 class Per
+14 | 三种继承方式 定义了一个派生类 Student，其继承自基类 Person，同时，我们使 用了 public 
+15 | 三种继承方式 定义了一个派生类 Student，其继承自基类 Person，同时，我们使 用了 public 
+16 | 三种继承方式 直接调用了 Person 类里面的 public 方法，此时程序运行正常。 
+17 | 三种继承方式 直接调用了 Person 类里面的 public 方法，此时程序运行正常。 现在修改程序，在派生
+18 | 三种继承方式 现在修改程序，在派生类中直接访问基类的成员， private成员不可访问 
+19 | 三种继承方式 再次修改程序，修改为 private 继承 修改为了 private 现在可以看到不可以访问基类
+20 | 三种继承方式 继承方式中的 public、protected、private 是用来指明基类成员在派 生类中的
+21 | 继承中的构造和析构  C++ 中，在使用 继承 时，子类可以继承所有父类的非 private 的 成 员函数 
+22 | 继承中的构造和析构 子类调用父类构造函数 语法 ChildClass::ChildClass(string n
+23 | 继承中的构造案例 class Person {public: Person(string name, int 
+24 | 通过using来继承基类构造函数  C++11标准中，可通过using Base::Base把基类构造函数继承
+25 | 通过using来继承基类构造函数  class Person {public: Person(string n
+26 | 构造函数调用顺序 子类 继承 父类时，当实例化子类时，一定会优先调用父类的 构造 函数，事实上，通过派生类创建
+27 | 构造函数调用顺序 class Animal { public: Animal() { cout << "cal
+28 | 构造函数调用顺序 class Animal { public: Animal() { cout << "cal
+29 | 构造函数调用顺序 子类继承父类时，实例化子类，如果不知道基类构造函数，则使用 默认构造函数，如果没有，则报错 
+30 | 构造函数调用顺序 class Animal { public: Animal(string name) { c
+31 | 继承中的构造和析构 在 C++ 中，使用子类 继承 父类时，当析构子类时，一定会优先调 用子类的 析构函数，接
+32 | 继承中的析构函数 class Animal { public: Animal() { cout << "cal
+33 | 多继承 在 C++ 中，当派生类只有一个基类时，称为单继承，同时，在 C++  中，也是支持多继承的，多继承，
+34 | 多继承 语法 class D: public A, private B, protected C{     /
+35 | 多继承 简单案例 class Animal{ }; class Person{ }; class Xtq:pu
+36 | 多继承 简单案例 class Animal{ public: Animal(){} public: strin
+37 | 多继承 简单案例 子类Xtq,继承了所有的非私有的成员属性和方法。 
+38 | 多继承构造函数 在 C++ 中，多继承形式下的 构造函数和单继承形式基本相同，只 是要在派生类的构造函数中调用
+39 | 多继承构造函数 class Person{ public: Person(string name):name(
+40 | 多继承构造函数 class Person{ public: Person(){ cout <<"call Pe
+41 | 多继承构造函数 class Person{ public: Person(){ cout <<"call Pe
+42 | 多继承构造函数 class Person{ public: Person(){ cout <<"call Pe
+43 | 多继承构造函数 class Person{ public: Person(){ cout <<"call Pe
+44 | 多继承命名冲突 在 C++ 中，多继承 如果多个基类中有相同的 成员变量 或者 成员函 数，那么此时就会存在成
+45 | class Person{ public: Person(){} void printInfo(){} }; 
+46 | class Person{ public: Person(){} void printInfo(){} }; 
+47 | 菱形继承 在 C++ 中，在使用 多继承 时，如果发生了如果类 A 派生出类 B 和 类 C，类 D 继承自类
+48 | 菱形继承 // 间接基类A class A { protected: int m_a; }; // 直接基类B
+49 | 菱形继承 //派生类D class D: public B, public C { public: void 
+50 | 菱形继承 //派生类D class D: public B, public C { public: void 
+51 | 虚继承 在 C++ 中，在使用 多继承 时，如果发生了 菱形继承，那么就会出 现数据冗余的问题，为了解决菱形继
+52 | 虚继承 // 间接基类A class A { protected: int m_a; }; // 直接基类B 
+53 | 虚继承构造函数 在 C++ 中，普通的 继承 时，可以在子类直接显式的调用父类的 构 造函数，在 虚继承 中，
+54 | 虚继承构造函数 //虚基类A class A { public: A(int a):m_a(a) { } pr
+55 | 虚继承构造函数 //间接派生类D class D: public B, public C { public: 
+56 | 练习题 题目 定义一个基类Animal，它包含两个私有数据成员，一个是string， 存储动物的名称（例如"F
+57 | 练习题 代码 #include <iostream> using namespace std; class A
+58 | 知识点总结 1. 继承的基本概念和派生类的定义               了解 2. 继承的语法规则    
+59 | 作业 1.派生类从基类那里继承了什么？ 2.派生类不能从基类那里继承什么? 
+60 | 作业 1.派生类从基类那里继承了什么？ 基类的公有成员将成为派生类的公有成员，基类的私有对象也将成 为派生类的
+61 | 下节课预告 类的多态 
+===== ../课件/19.4 多态.pdf pages 47
+1 | 多态 
+2 | 复习 1. 继承的基本概念和派生类的定义               了解 2. 继承的语法规则       
+3 | 目录 1. 多态的基本概念                                        了解
+4 | 多态的基本概念 C++面向对象 的三大特征为：封装、继承 和多态，这三种机制能够 有效提高程序的可读性、可扩充
+5 | 多态的基本概念 有虚函数，基类指针指向基类对象时就使用基类的成员（包括 成 员函数 和 成员变量 ），指向派生
+6 | 构成多态的条件 构成多态的条件 1. 必须存在继承关系； 2. 继承关系中必须有同名的虚函数，并且它们是覆盖关
+7 | 构成多态的条件 //Person类 class Person { public: Person(string 
+8 | 构成多态的条件 定义了一个 Person 类和一个 Student 类，Student 类继承自 Person
+9 | 构成多态的条件 int main() { Person *person = new Person("zs", 
+10 | 构成多态的条件 用 Student 类实例化了 Person 类，最终调用 info 函数，此时的 info 
+11 | 构成多态的条件 通过基类指针只能访问派生类的成员变量，但是不能访问派生类的 成员函数。为了能让基类指针访问派生
+12 | 构成多态的条件 修改代码之后，再次运行，这次使用 person 对象可以调用到  Student 实例的 in
+13 | 引用实现多态 指针和引用很像，在 C++ 中，多态 的实现，除了可以使用子类的 指针指向父类的对象之外，还可以
+14 | 引用实现多态 Person p1("xiaoming",100); Student s1("xiaozhang
+15 | 虚函数 在 C++ 中，使用 virtual 关键字 修饰的 函数 被称为虚函数，虚函数 对于 多态 具有决定
+16 | 虚函数 上个案例中的Person类中和Student类中的的info函数，就是虚函数。 必须将 info 函数
+17 | 虚函数案例 定义一个Animal类，在定义一个虚函数eat；在定义一个dog类和cat 类继承Animal，通
+18 | 虚函数案例 定义一个Animal类，在定义一个虚函数eat；在定义一个dog类和cat 类继承Animal，通
+19 | 虚函数案例 class Animal{ public: virtual void eat(){ cout <<
+20 | 虚析构 在 C++ 中，使用 virtual 关键字 修饰的 函数 被称为 虚函数，C++ 的  构造函数 不
+21 | 虚析构函数的作用 虚析构函数是为了避免内存泄露，而且是当子类中会有指针 成员变量 时才 会使用得到的。也就说虚
+22 | 虚析构函数 语法 virtual ~FuncName() {} 
+23 | 虚析构函数 class Person { public: Person(string name, int ag
+24 | 虚析构函数 在 main 函数里面，使用了父类指向了子类对象，最终，释放子类对象时，调 用了父类的析构函数，这
+25 | 虚析构函数 class Person { public: Person(string name, int ag
+26 | 虚析构函数 将父类的析构函数声明为了虚析构，再次运行程序。 
+27 | 虚析构函数 用 C++ 开发的时候，用来做基类的类的析构函数一般都是虚函数。 虚析构函数是为了避免内存泄露，而
+28 | 虚函数表 在 C++ 中，多态 是由 虚函数 实现的，而虚函数主要是通过虚函数 表（V-Table）来实现的。
+29 | 虚函数表 C++ 的虚函数表如下图所示： class A { public:     virtual void
+30 | 虚函数表 虚表是一个指针数组，其元素是虚函数的指针，每个元素对应一个虚函数的函数指针。需要指出的是， 普通的函
+31 | C++如何实现动态绑定 动态绑定什么时候发生？所有的工作都是由编译器在幕后完成。当 我们告诉通过创建一个vir
+32 | C++如何实现动态绑定 动态绑定什么时候发生？所有的工作都是由编译器在幕后完成。当 我们告诉通过创建一个vir
+33 | C++如何实现动态绑定 在编译阶段，编译器秘密增加了一个vptr指针，但是此时vptr指针并没有初 始化指向虚
+34 | C++如何实现动态绑定 当子类无重写基类虚函数时 Animal *a = new Dog(); a->func
+35 | 当子类无重写基类虚函数时代码验证 class Animal{ public: virtual void  fu
+36 | C++如何实现动态绑定 当子类重写基类虚函数时 Animal *a = new Dog(); a->func1
+37 | 当子类重写基类虚函数时时代码验证 class Animal{ public: virtual void  fu
+38 | 抽象基类和纯虚函数 在设计时，常常希望基类仅仅作为其派生类的一个接口。这就是说，仅想对基类进行向上类 型转换，
+39 | 抽象基类和纯虚函数 纯虚函数  虚函数： virtual type funcName(plist) {}  纯
+40 | 抽象基类和纯虚函数 案例 抽象基类是泡饮品的抽象操作 子类 泡咖啡是 泡饮品的具体操作 子类 泡茶是 泡饮品的
+41 | 抽象基类和纯虚函数 案例代码 //抽象基类，制作饮品 class AbstractDrinking { pub
+42 | 抽象基类和纯虚函数 案例代码 //子类制作咖啡 class Coffee : public AbstractD
+43 | 抽象基类和纯虚函数 案例代码 //子类 泡茶 class Tea : public AbstractDrink
+44 | 抽象基类和纯虚函数 案例代码 //业务函数 void DoBussiness(AbstractDrinking
+45 | 知识点总结 1. 多态的基本概念                                       
+46 | 作业 1. 什么是虚函数？虚函数有哪些特点？ 
+47 | 下节课预告 综合案例5 
