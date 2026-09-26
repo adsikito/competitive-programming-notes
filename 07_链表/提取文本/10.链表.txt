@@ -1,0 +1,45 @@
+===== Slide 1 =====
+https://leetcode.cn/problems/reverse-linked-list/description/
+思路：
+===== Slide 2 =====
+https://leetcode.cn/problems/reverse-linked-list/description/
+思路1：
+若带头结点，先将头结点摘下。
+然后从第一个结点开始，挨个摘下每一个结点，摘下后用头插法建立新的链表。
+链表原地逆置
+思路2：双指针法
+定义两个指针： pre和 cur ；pre在右 cur 在左。
+每次让 pre 的 next 指向 cur ，实现一次局部反转。
+局部反转完成之后，pre和 cur 同时往右移动一个位置。
+循环上述过程，直至 pre到达链表尾部。（注意，在循环过程中，需要记录pre->next，不能丢失结点）
+===== Slide 3 =====
+https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/
+思路：
+===== Slide 4 =====
+https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/
+思路：快慢指针的思想。
+我们将第一个指针 fast指向链表的第 k+1个节点，第二个指针 slow 指向链表的第一个节点，此时二者之间刚好间隔 k 个节点。此时两个指针同步向后走，当 fast走到链表的尾部空节点时，则此时 slow指针刚好指向链表的倒数第k个节点。
+===== Slide 5 =====
+静态链表：用数组描述的链表，即称为静态链表。
+分配一整片连续的内存空间，各个结点集中安置，逻辑结构上相邻的数据元素，存储在指定的一块内存空间中，数据元素只允许在这块内存空间中随机存放，这样的存储结构生成的链表称为静态链表。也就是说静态链表是用数组来实现链式存储结构，静态链表实际上就是一个结构体数组。
+int l=1;
+===== Slide 6 =====
+如果一个数组是有序的，查询的时候可以使用折半查找，时间复杂度可以降到 O(logn) 。但如果链表是有序的，我们仍然需要从前往后一个个查找，这样显然很慢，这个时候我们可以使用跳表（Skip list），跳表就是多层链表，每一层链表都是有序的，最下面一层是原始链表，包含所有数据，从下往上节点个数逐渐减少。
+跳表：又叫做跳跃表、跳跃列表，在有序链表的基础上增加了“跳跃”的功能,
+有序链表实现二分查找
+跳表的特性：
+1. 一个跳表有若干层链表组成；
+2. 每一层链表都是有序的；
+3. 跳表最下面一层的链表包含所有数据；
+4. 上一层的元素指向下层的元素必须是相同的；
+6. 头指针 head 指向最上面一层的第一个元素；
+https://leetcode.cn/problems/design-skiplist/
+===== Slide 7 =====
+下节课课上例题：
+力扣 735
+洛谷 P4387
+===== Notes 1 =====
+https://leetcode.cn/problems/reverse-linked-list/solutions/99711/fan-zhuan-lian-biao-shuang-zhi-zhen-di-gui-yao-mo-/
+===== Notes 2 =====
+https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/solutions/972458/lian-biao-zhong-dao-shu-di-kge-jie-dian-1pz9l/
+[META] slides=7 pics=3 notes=2
