@@ -1,4 +1,0 @@
-
-all:
-	@echo "Makefile success"
-
