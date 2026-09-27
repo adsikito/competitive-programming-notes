@@ -1,0 +1,174 @@
+--- p1 ---
+循环结构
+--- p2 ---
+复习
+1.三种流程控制
+2.if语句
+3.if-else语句
+4.if-elif-elif-else语句
+5.if嵌套语句
+6.条件表达式
+7.switch-case语句
+--- p3 ---
+目录
+1.while语句
+2.do-while语句
+3.for语句
+4.循环嵌套
+5.break和continue
+--- p4 ---
+前言
+有的时候，可能需要多次执行同一块代码。
+编程语言提供了允许更为复杂的执行路径的多种控制结构。
+循环语句允许多次执行一个语句或语句组
+--- p5 ---
+while语句
+C++ 的 while 循环跟 if 和 for 语句类似，都是使用 {} 做为分割符，
+要执行的代码块都是使用相同的缩进形式
+语法
+while (cond)
+{
+// do something
+}
+--- p6 ---
+while执行流程
+--- p7 ---
+while循环案例-题目
+循环打印0-5的数字。
+输入：无
+输出：
+num = 0
+num = 1
+num = 2
+num = 3
+num = 4
+num = 5
+--- p8 ---
+while循环案例-代码
+int num = 0；
+while (num <= 5)
+{
+cout << "num = " << num << endl;
+    
+num = num + 1;
+}
+--- p9 ---
+do-while语句
+C++ 的 do while 循环跟 while 循环 类似，不过，do while 循环与 
+while 循环的区别是不管 do while 的条件是否为真，do while 至少
+会执行一次。
+语法
+do{
+    //do something 
+}while (cond); 
+--- p10 ---
+do-while执行流程
+--- p11 ---
+do-while案例题目
+do-while循环打印从1到10
+--- p12 ---
+do-while案例代码
+int i = 1;    
+do{    
+        cout<<i<<endl;    
+        i++;    
+} while (i <= 10) ;
+--- p13 ---
+for语句
+for循环用于重复程序的一部分几次(或多次)。 如果迭代次数是固定
+的，建议使用for循环，其次是while或do-while循环。
+语法
+for (express1; express2; express3)
+{
+// statements
+}
+--- p14 ---
+for循环执行流程
+--- p15 ---
+for循环案例题目
+for循环打印从1到10
+--- p16 ---
+for循环案例代码
+ for(int i=1;i<=10;i++){      
+        cout<< i <<endl;      
+ }
+--- p17 ---
+循环嵌套
+C++ 中循环 也可以实现嵌套的效果
+即 for 循环里面嵌套一个或多个 for 循环
+这种写法就类似于 C++ 的 if 语句 、else if 语句 和 else 语句 的嵌套
+--- p18 ---
+嵌套循环结构
+循环1
+{
+// statements1
+循环2
+{
+// statements2
+循环3
+{
+// statements3
+}
+}
+}
+--- p19 ---
+循环嵌套案例题目
+实现下图所示结果
+--- p20 ---
+循环嵌套案例代码
+for (int i = 0; i < 3; i++)
+{
+cout << "\ni = " << i << endl;
+for (int j = 0; j < 5; j++)
+{
+cout << "\tj = " << j;
+}
+}
+cout << "\nOver" << endl;
+--- p21 ---
+break和continue
+在C ++中，有两个语句break;，continue;专门用于更改程序的正常
+流程。
+有时，希望跳过某个测试条件的循环执行，或者不检查条件就立即
+终止它。
+在此类情况下，可以使用一条continue;或break;语句。
+--- p22 ---
+break和continue
+break；语句出现时将立即终止循环
+continue;语句出现时将终止该轮/本轮循环，继续下一次循环
+--- p23 ---
+break案例
+从1开始打印，直到遇到第一个数能够被3和4整除数，立即终止。
+int num = 1;
+while(1){
+if(num %3 == 0 && num%4 == 0){
+break;
+}
+           num++;
+}
+--- p24 ---
+continue案例
+打印1-10之间的偶数.
+for（int i=1; i<=10; i++){
+if(i %2 == 1){
+continue;
+}
+           cout << i << endl;
+}
+--- p25 ---
+知识点总结
+1.while语句
+2.do-while语句
+3.for语句
+4.循环嵌套
+5.break和continue
+--- p26 ---
+作业
+1. 水仙花数是指一个 3 位数，它的每个位上的数字的 3次幂之和
+等于它本身
+      例如：1^3 + 5^3+ 3^3 = 153
+      请利用do...while语句，求出所有3位数中的水仙花数
+--- p27 ---
+下节课预告
+1.随机数
+2.综合案例

@@ -1,0 +1,223 @@
+--- p1 ---
+流程控制 选择结构
+--- p2 ---
+复习
+1.算数运算符
+2.赋值运算符
+3.比较运算符
+4.逻辑运算符
+5.运算符优先级
+6.数据类型转换
+--- p3 ---
+目录
+1.三种流程控制
+2.if语句
+3.if-else语句
+4.if-elif-elif-else语句
+5.if嵌套语句
+6.条件表达式
+7.switch-case语句
+--- p4 ---
+三种流程控制
+在程序中，程序运行的流程控制决定程序是如何执行的，主流的程
+序设计语言一般有三大流程控制语句：分别是顺序控制、分支控制
+和循环控制。
+C++ 的常用流程控制有 if 、for 、while 、do while 和 switch 。
+--- p5 ---
+顺序控制
+顺序控制就是程序从上到下逐行的执行，中间没有任何判断和跳转。
+--- p6 ---
+分支控制
+分支控制就是让程序有选择的执行，主要有三种形式：
+单分支、双分支和多分支
+C语言 中的分支控制主要是借助于if语句来实现。
+--- p7 ---
+循环控制
+循环控制就是让程序在满足一定的条件下就一直循环的去执行，直
+到条件不满足，则跳出循环继续执行循环以外的语句。
+C++ 中的循环控制主要是借助于 for 、 while 和 do while 来实现。
+--- p8 ---
+if语句
+单独的if，也叫单分支结构。
+语法
+if (condition)
+{
+//do something
+}
+int num = 100；
+if（num > 0){
+       cout << “num > 0” << endl;
+}
+--- p9 ---
+if...else 语句
+双分支
+语法
+if (condition)
+{
+//do something
+}else{
+          //do something
+}
+int num2 = 1;
+if(num2 == 1){
+       cout << “num2 等于1” << endl;
+}
+else{
+       cout << “num2不 等于1” << endl;
+}
+--- p10 ---
+if-elif-elif-else语句
+多分支
+语法
+if (condition)
+{
+    // do something
+}
+else if (condition1)
+{
+    // do something1
+}
+else if (condition2)
+{
+    
+}
+int num3 = 0；
+if（num3 > 0){
+      cout << “num3 大于0“ << endl;
+}
+else if(num3 < 0){
+     cout << “num3 小于0“ << endl;
+}
+else{
+     cout << “num3 等于0“ << endl;
+}
+--- p11 ---
+小结1
+--- p12 ---
+小结2
+--- p13 ---
+if嵌套语句
+if (condition)
+{
+if (condition1)
+{
+// do something1
+}
+else if (condition2)
+{
+// do something2
+}
+}
+else
+{
+if (condition3)
+{
+// do something3
+}
+else if (condition4)
+{
+// do something4
+}
+else
+{
+// do something5
+}
+}
+在 C++ 中，if 语句、else if 语句 和 else 语句 可以进行任意的嵌套。
+   int a = 1;
+   int b = 2;
+ 
+   if( a == 1 )
+   {
+       if( b == 2 )
+       {
+         
+               cout << "a等于1且a等于2" << endl;
+       }
+        else{
+               cout << “b 不等于 1 “ << endl;
+       }
+   }
+   else{
+           cout << “a 不等于 1 “ << endl;
+  }
+--- p14 ---
+条件表达式
+C/C++条件表达式使用三目运算符 ？：完成，适当条件下可与 if 
+else 语句相互替换。
+条件表达式优点在于可直接返回表达式运算的结果。
+语法
+条件表达式?值1：值2；
+--- p15 ---
+案例
+求两个数的差，结果总是为大的数减去小的数
+--- p16 ---
+案例
+求两个数的差，结果总是为大的数减去小的数
+int a,b,c;
+cin >> a >> b;
+c = (a > b)?a-b:b-a;
+cout << c << endl;
+--- p17 ---
+switch语句
+switch语句从多个条件执行一个语句。 它就类似于在C++中的多分
+支语句
+语法
+switch (n)
+{
+    case constant1:
+        //如果n等于constant1，将执行的代码；
+        break;
+    case constant2:
+        //如果n等于constant2，将执行的代码；
+        break;
+        .
+        .
+        .
+    default:
+        // 如果n不匹配任何constant，将执行的代码
+}
+--- p18 ---
+switch规则
+• switch 语句中的 expression 必须是一个整型或枚举类型，或者是一个 class 类型，其中 class 有一个单一的转
+换函数将其转换为整型或枚举类型。
+• 在一个 switch 中可以有任意数量的 case 语句。每个 case 后跟一个要比较的值和一个冒号。
+• case 的 constant-expression 必须与 switch 中的变量具有相同的数据类型，且必须是一个常量或字面量。
+• 当被测试的变量等于 case 中的常量时，case 后跟的语句将被执行，直到遇到 break 语句为止。
+• 当遇到 break 语句时，switch 终止，控制流将跳转到 switch 语句后的下一行。
+• 不是每一个 case 都需要包含 break。如果 case 语句不包含 break，控制流将会 继续 后续的 case，直到遇到 
+break 为止。
+• 一个 switch 语句可以有一个可选的 default case，出现在 switch 的结尾。default case 可用于在上面所有 case 
+都不为真时执行一个任务。default case 中的 break 语句不是必需的。
+--- p19 ---
+案例
+输入一个数字，检查等级10,20,30.
+--- p20 ---
+案例
+输入一个数字，检查等级10,20,30.
+    int num;  
+    cout<<"请输入一个数字:";    
+    cin>>num;  
+    switch (num)    
+    {    
+        case 10: cout<<"等级 10"<<endl; break;    
+        case 20: cout<<"等级 20"<<endl; break;    
+        case 30: cout<<"等级 30"<<endl; break;    
+        default: cout<<"等级不是 10, 20 or 30"<<endl; break;    
+    }
+--- p21 ---
+知识点总结
+1.三种流程控制                          熟悉
+2.if语句                                          重点
+3.if-else语句                                 重点
+4.if-elif-elif-else语句                   重点
+5.if嵌套语句                                 重点
+6.条件表达式                               了解
+7.switch-case语句                        重点
+--- p22 ---
+作业
+面试真题
+有多种条件情况，你选择单分支实现，还是多分支实现，为什么？
+--- p23 ---
+下节课预告
+循环结构
