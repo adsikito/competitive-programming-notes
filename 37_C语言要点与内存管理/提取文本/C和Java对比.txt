@@ -1,0 +1,145 @@
+一、C语言 和 Java语言
+1. 结构体设计思路
+1.1 Java数据类型关系
+	基本数据类型
+		值的形式进行管理
+	自定义数据类型
+		引用的形式进行管理
+		最终的内存在 堆 上		被 栈区变量（引用）管理这块堆内存
+
+C堆、栈形式：		malloc  在堆上申请 连续空间  返回空间的首地址	局部变量定义在栈上，临时接管无名的空间的首地址
+						通过返回值把这个临时局部变量的值，交给另外的接收者
+					free	释放堆上的内容		内存泄漏	double free
+
+Java				new 数据类型	堆上无名空间	首地址交过去		自定义数据的变量
+					不需要free
+	class Node {xxxx};
+	Node a = new Node();
+
+1.2 struct   ----   class 
+C:					c++/Java
+	int a;			abc xx;
+struct abc {};
+struct abc a;
+
+typedef 
+
+1.3 指针 	引用
+指针是 变量		拥有了 		指向不同内存区域的能力
+	保存地址的变量
+					struct abc *p1		----   abc p1;
+保存地址的常量		struct abc* const p2 ----  abc p2;
+  
+
+C:  
+struct Node {
+	int data;
+	struct Node *next;
+};
+
+Java:
+class Node {
+	int data;
+	Node next;		// struct Node *const next;
+}
+
+
+2. Java内存管理  指针隐藏  引用的思想
+
+声明的区别
+Node *ptr;
+Node ptr;
+
+分配内存：
+malloc(sizeof(Node));
+new Node();
+
+访问成员：
+ptr->data;
+ptr.data
+
+地址运算
+++ptr
+不支持
+
+释放空间
+free(ptr)
+GC
+
+
+C语言的链表基础操作、Java链表基础操作
+
+typedef struct Node {
+	int data;
+	struct Node *next;
+} Node;
+struct Node *a1 = malloc(sizeof(Node));
+struct Node *a2 = malloc(sizeof(Node));
+a1->data = 10;
+a2->data = 20;
+a1->next = a2;
+a2->next = NULL;
+
+struct Node *p = a;
+while (p) {
+	printf p->data;
+	p = p->next;
+}
+
+malloc申请 char *p = malloc(10);
+free(p);
+
+
+二、面试题 C语言
+①一个整型数（An integer）；
+	int a;
+②一个指向整型数的指针（A pointer to an integer）；
+	int *a;
+③一个指向指针的的指针，它指向的指针是指向一个整型数（A pointer to a pointer to an integer）；
+	int* *a;
+④一个有10个整型数的数组（An array of 10 integers）；
+	int a[10];
+⑤一个有10个指针的数组，该指针是指向一个整型数的（An array of 10 pointers to integers）；
+	int *a[10];
+⑥一个指向有10个整型数数组的指针（A pointer to an array of 10 integers）；
+	int (*a)[10];
+⑦一个指向函数的指针，该函数有一个整型参数并返回一个整型数（A pointer to a function that takes an integer as an argument and returns an integer）；
+	int (*a)(int);
+	int *a(int);
+⑧一个有10个指针的数组，该指针指向一个函数，该函数有一个整型参数并返回一个整型数（ An array of ten pointers to functions that take an integer argument and return an integer ）。
+	int (*a[10])(int);
+
+
+int a;
+		????????
+|		00001000
+-----------------
+		????1???
+
+		11110111
+a |= 0x1<<3	
+
+
+a &= ~(0x1<<3)
+
+int *p = (int *)0x67a7;
+p[0] = 0xaabb;
+
+
+void (*signal(int,void(*)(int)))(int);
+
+signal: 是函数名
+
+输入参数： 2个
+	int
+	void(*)(int)		指针  指向一个函数首地址的指针
+返回值：
+	返回一个指针	一个函数指针，输入int 返回值为void的函数指针
+		void(*)(int)
+		
+xx fun(int, xx);
+
+void (*handler)(int)			handler的指针变量，。。。
+typedef	void (*handler_t)(int);	定义了一个指针类型的别名  int void 函数指针
+
+handler_t signal(int ,handler_t);
